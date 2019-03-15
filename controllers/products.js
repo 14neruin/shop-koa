@@ -9,11 +9,11 @@ exports.allProducts = async ctx => {
 }
 
 exports.productsCategory = async ctx => {
-	let search = (req.query.search)?req.query.search:undefined
-	let start = (req.query.start)?req.query.start:0
-	let count = (req.query.count)?req.query.count:25
+	let search = (ctx.query.search)?ctx.query.search:undefined
+	let start = (ctx.query.start)?ctx.query.start:0
+	let count = (ctx.query.count)?ctx.query.count:25
 
-	ctx.body = await Products.productsCategory(req.params.id, start, count, search)
+	ctx.body = await Products.productsCategory(ctx.params.id, start, count, search)
 }
 
 exports.product = async ctx => {

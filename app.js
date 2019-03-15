@@ -7,7 +7,8 @@ const Koa		= require('koa'),
 	http		= require('http'),
 	https		= require('https'),
 	session		= require('koa-session'),
-	static		= require('koa-static')
+	static		= require('koa-static'),
+	views		= require('koa-views')
 
 const mongourl = process.env.MONGODB_URI || 'mongodb://localhost/session'
 
@@ -16,6 +17,7 @@ app.keys = ['dick']
 
 app.use(logger())
 	.use(bodyParser())
+	.use(views(__dirname + '/views'))
 	.use(session(app))
 	.use(error)
 	.use(api.routes())
