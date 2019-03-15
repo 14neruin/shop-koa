@@ -6,7 +6,8 @@ const Koa		= require('koa'),
 	error		= require('./middlewares/error'),
 	http		= require('http'),
 	https		= require('https'),
-	session = require('koa-session')
+	session		= require('koa-session'),
+	static		= require('koa-static')
 
 const mongourl = process.env.MONGODB_URI || 'mongodb://localhost/session'
 
@@ -16,9 +17,10 @@ app.keys = ['dick']
 app.use(logger())
 	.use(bodyParser())
 	.use(session(app))
+	.use(error)
 	.use(api.routes())
 	.use(pages.routes())
-	.use(error)
+	.use(static(__dirname + '/static'))
 
 const port = process.env.PORT || 443
 const httpport = process.env.PORT || 80
