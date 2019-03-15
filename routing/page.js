@@ -3,9 +3,9 @@ const router = new Router();
 
 //Товары всех категорий
 router.get("/", async ctx => {
-	let n = ctx.session.views || 0;
-	ctx.session.views = ++n;
-	ctx.body = n + ' views';
+	if(!ctx.session.basket) ctx.session.basket = []
+	ctx.session.basket.push(1)
+	ctx.body = ctx.session.basket;
 })
 
 module.exports = router;
