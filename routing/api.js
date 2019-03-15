@@ -1,7 +1,7 @@
 const Router = require('koa-router');
 const router = new Router();
 
-let productsController = require('./controllers/products')
+let productsController = require('../controllers/products')
 
 //config
 router.get('/api', async ctx => {
