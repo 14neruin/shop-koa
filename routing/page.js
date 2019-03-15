@@ -3,7 +3,9 @@ const router = new Router();
 
 //Товары всех категорий
 router.get("/", async ctx => {
-	ctx.body = "Hi, this API. Redirect: /api"
+	let n = ctx.session.views || 0;
+	ctx.session.views = ++n;
+	ctx.body = n + ' views';
 })
 
 module.exports = router;

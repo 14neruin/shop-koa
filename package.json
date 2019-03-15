@@ -6,14 +6,21 @@
   "author": "14nerui <14neruin@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "connect-mongo": "^2.0.3",
     "dotenv": "^7.0.0",
     "http": "^0.0.0",
     "https": "^1.0.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-cors": "^0.0.16",
+    "koa-generic-session": "^2.0.1",
+    "koa-generic-session-mongo": "^0.4.0",
     "koa-logger": "^3.2.0",
+    "koa-redis": "^3.1.3",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.10.1",
+    "koa-session-mongoose": "^2.0.5",
+    "mongoose": "^5.4.19",
     "mysql": "^2.16.0"
   }
 }
