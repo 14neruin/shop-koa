@@ -17,13 +17,13 @@ exports.productsCategory = async ctx => {
 }
 
 exports.product = async ctx => {
-	ctx.body = Products.product(req.params.id)
+	ctx.body = await Products.product(ctx.params.id)
 }
 
 exports.categories = async ctx => {
-	ctx.body = Products.categories()
+	ctx.body = await Products.categories()
 }
 
 exports.category = async ctx => {
-	ctx.body = Products.category(req.params.id)
+	ctx.body = await Products.category(ctx.params.id)
 }

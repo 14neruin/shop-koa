@@ -19,10 +19,10 @@ app.use(logger())
 	.use(bodyParser())
 	.use(views(__dirname + '/views'))
 	.use(session(app))
+	.use(static(__dirname + '/static'))
 	.use(error)
 	.use(api.routes())
 	.use(pages.routes())
-	.use(static(__dirname + '/static'))
 
 const port = process.env.PORT || 443
 const httpport = process.env.PORT || 80

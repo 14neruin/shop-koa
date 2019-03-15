@@ -10,22 +10,22 @@ exports.productsCategory = async (id, start = 0, count = 25, search = undefined,
 	return await db.query(q)
 }
 
-exports.product = async (id, cb) => {
+exports.product = async (id) => {
 	let q = `SELECT * FROM products WHERE id_product = ${id}`
 	return await db.query(q)
 }
 
-exports.categories = async (cb) => {
+exports.categories = async () => {
 	let q = `SELECT * FROM category`
 	return await db.query(q)
 }
 
-exports.category = async (id, cb) => {
+exports.category = async (id) => {
 	let q = `SELECT * FROM category WHERE id=${id}`
 	return await db.query(q)
 }
 
-exports.getproducts = async (ids, cb) => {
+exports.getproducts = async (ids) => {
 	let q = `SELECT * FROM products WHERE id_product IN (${ids}0)`
 	return await db.query(q)
 }

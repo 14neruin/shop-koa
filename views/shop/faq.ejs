@@ -1,11 +1,10 @@
-<% layout('layout/page') -%>
-
+<%body=`
 <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
 
-<h1><%=lang.faq%></h1>
-<div onclick="openVK()" class="btn faq_btn"><%=lang.ask%></div>
+<h1>${lang.faq}</h1>
+<div onclick="openVK()" class="btn faq_btn">${lang.ask}</div>
 <p style="font-size:1.4rem;margin:-1rem 0rem 2rem 0rem">
-	<%=lang.askdescription%>
+	${lang.askdescription}
 </p>
 
 <div id="vk_community_messages"></div>
@@ -40,9 +39,9 @@
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2182.3759495548857!2d60.595515316198835!3d56.839494980857936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c16e8a9d2a7555%3A0xd3923d859106706a!2z0YPQuy4gOCDQnNCw0YDRgtCwLCA0LCDQldC60LDRgtC10YDQuNC90LHRg9GA0LMsINCh0LLQtdGA0LTQu9C-0LLRgdC60LDRjyDQvtCx0LsuLCA2MjAwMTQ!5e0!3m2!1sru!2sru!4v1543527274627" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
 	<div>
-		<%=lang.adress%>: <br> 
+		${lang.adress}: <br> 
 		8 march st., 4 <br><br>
-		<%=lang.phone%>: <br>
+		${lang.phone}: <br>
 		89090207012
 	</div>
 </div>
@@ -69,3 +68,7 @@ let widget = VK.Widgets.CommunityMessages(
 	}
 )
 </script>
+` %>
+
+
+<% include layout/page.ejs -%>

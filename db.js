@@ -45,7 +45,7 @@ exports.query = async (q) => {
 				this.end()
 				if(err)
 					return cb({error:"Query error"})
-				return cb({result:result})
+				return cb({response:result})
 			})
 			this.end()
 		})

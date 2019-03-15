@@ -1,5 +1,7 @@
-<% layout('layout/page') -%>
-
+<%body=`
 <script>
-getProducts(<%=id%>)
+	getProducts(${id}, 'page')
 </script>
+`%>
+
+<% include layout/page.ejs -%>
