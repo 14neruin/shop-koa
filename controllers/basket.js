@@ -4,6 +4,7 @@ exports.get = async ctx => {
 	if(!ctx.session.basket) ctx.session.basket = []
 	ctx.body = ctx.session.basket
 }
+
 exports.add = async ctx => {
 	if(!ctx.session.basket) ctx.session.basket = []
 
@@ -20,6 +21,7 @@ exports.add = async ctx => {
 
 	ctx.body = {status:true}
 }
+
 exports.edit = async ctx => {
 	if(!ctx.session.basket) ctx.session.basket = []
 
@@ -36,6 +38,7 @@ exports.edit = async ctx => {
 	}
 	ctx.body = {status:false, error:"No product in basket"}
 }
+
 exports.delete = async ctx => {
 	if(!ctx.session.basket) ctx.session.basket = []
 
@@ -50,6 +53,7 @@ exports.delete = async ctx => {
 	}
 	ctx.body = {status:false, error:"No product in basket"}
 }
+
 exports.price = async ctx => {
 	if(!ctx.session.basket) ctx.session.basket = []
 

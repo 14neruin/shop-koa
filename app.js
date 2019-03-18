@@ -7,8 +7,6 @@ const Koa		= require('koa'),
 	https		= require('https'),
 	session		= require('koa-session')
 
-const mongourl = process.env.MONGODB_URI || 'mongodb://localhost/session'
-
 const app = new Koa()
 app.keys = ['dick']
 
@@ -27,7 +25,6 @@ const options = {
 }
 
 https.createServer(options, app.callback()).listen(port, () => console.log("Listening on port " + port))
-
 http.createServer((req, res) => {
 	res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url })
 	res.end()

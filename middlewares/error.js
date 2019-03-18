@@ -1,20 +1,17 @@
 'use strict';
 
 const errorHandler = async (ctx, next) => {
-	try {
+	try{
 		ctx.body = {"error":"Page not found"}
-		await next();
-	} catch (err) {
-		//eslint-disable-next-line
-		console.error(err);
-		ctx.body = undefined;
+		ctx.status = 404
+		await next()
+	}catch(err){
+		console.error(err)
+		ctx.body = undefined
 		ctx.status = ctx.status >= 400 && ctx.status || 400;
-		if (err.message) {
-			ctx.body = {
-				errors: [err.message]
-			};
-		}
+		if (err.message)
+			ctx.body = {"error": [err.message]}
 	}
-};
+}
 
-module.exports = errorHandler;
+module.exports = errorHandler
