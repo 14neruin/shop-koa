@@ -2,13 +2,10 @@ const Koa		= require('koa'),
 	bodyParser	= require('koa-bodyparser'),
 	logger		= require('koa-logger'),
 	api			= require('./routing/api'),
-	pages		= require('./routing/page'),
 	error		= require('./middlewares/error'),
 	http		= require('http'),
 	https		= require('https'),
-	session		= require('koa-session'),
-	static		= require('koa-static'),
-	views		= require('koa-views')
+	session		= require('koa-session')
 
 const mongourl = process.env.MONGODB_URI || 'mongodb://localhost/session'
 
@@ -17,12 +14,9 @@ app.keys = ['dick']
 
 app.use(logger())
 	.use(bodyParser())
-	.use(views(__dirname + '/views'))
 	.use(session(app))
-	.use(static(__dirname + '/static'))
 	.use(error)
 	.use(api.routes())
-	.use(pages.routes())
 
 const port = process.env.PORT || 443
 const httpport = process.env.PORT || 80

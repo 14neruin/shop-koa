@@ -2,7 +2,7 @@
 
 const errorHandler = async (ctx, next) => {
 	try {
-		await ctx.render('shop/404.ejs')
+		ctx.body = {"error":"Page not found"}
 		await next();
 	} catch (err) {
 		//eslint-disable-next-line
