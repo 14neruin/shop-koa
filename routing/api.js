@@ -7,6 +7,12 @@ let basketController = require('../controllers/basket')
 let ordersController = require('../controllers/orders')
 let employeesController = require('../controllers/employees')
 
+//HomePage
+router.get('/', async ctx => {
+	ctx.body = 'Hi! This is API. Redirect /api please.'
+	ctx.status = 200
+})
+
 //CONFIG +
 router.get('/api', async ctx => {
 	ctx.body = { ver:'1.0', lang:"ru, en"}
