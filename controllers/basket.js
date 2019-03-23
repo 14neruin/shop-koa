@@ -3,6 +3,7 @@ let Basket = require('../models/basket')
 exports.get = async ctx => {
 	if(!ctx.session.basket) ctx.session.basket = []
 	ctx.body = ctx.session.basket
+	if(ctx.body) ctx.status = 200
 }
 
 exports.add = async ctx => {
@@ -20,6 +21,7 @@ exports.add = async ctx => {
 		ctx.session.basket[ctx.session.basket.length] = {id:id, col:1}
 
 	ctx.body = {status:true}
+	if(ctx.body) ctx.status = 200
 }
 
 exports.edit = async ctx => {
@@ -33,6 +35,7 @@ exports.edit = async ctx => {
 				ctx.session.basket.splice(i, 1)
 			else
 				ctx.session.basket[i].col = Number(ctx.session.basket[i].col) + Number(count)
+		ctx.status = 200
 		return ctx.body = {status:true}
 		}
 	}
@@ -48,6 +51,7 @@ exports.delete = async ctx => {
 		if(ctx.session.basket[i].id == id){
 			ctx.session.basket.splice(i, 1)
 			ctx.session.save()
+			ctx.status = 200
 			return ctx.body = {status:true}
 		}
 	}
@@ -63,4 +67,5 @@ exports.price = async ctx => {
 	}
 
 	ctx.body = await Basket.price(`${ids}0`)
+	if(ctx.body) ctx.status = 200
 }

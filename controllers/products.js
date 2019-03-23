@@ -6,6 +6,7 @@ exports.allProducts = async ctx => {
 	let count = (ctx.query.count)?ctx.query.count:25
 
 	ctx.body = await Products.allProducts(start, count, search)
+	if(ctx.body) ctx.status = 200
 }
 
 exports.productsCategory = async ctx => {
@@ -14,16 +15,22 @@ exports.productsCategory = async ctx => {
 	let count = (ctx.query.count)?ctx.query.count:25
 
 	ctx.body = await Products.productsCategory(ctx.params.id, start, count, search)
+	if(ctx.body) ctx.status = 200
 }
 
 exports.product = async ctx => {
 	ctx.body = await Products.product(ctx.params.id)
+	if(ctx.body) ctx.status = 200
 }
 
-exports.categories = async ctx => {
-	ctx.body = await Products.categories()
+exports.add = async ctx => {
+	ctx.body = ''
 }
 
-exports.category = async ctx => {
-	ctx.body = await Products.category(ctx.params.id)
+exports.edit = async ctx => {
+	ctx.body = ''
+}
+
+exports.delete = async ctx => {
+	ctx.body = ''
 }
