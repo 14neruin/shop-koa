@@ -35,7 +35,7 @@ router.post("/api/basket/add/:id", basketController.add)
 router.put("/api/basket/edit/:id", basketController.edit)
 router.delete("/api/basket/delete/:id", basketController.delete)
 
-//ORDERS
+//ORDERS +
 router.get("/api/orders", ordersController.orders)
 router.get("/api/order/:id", ordersController.order)
 router.put("/api/order/status/:id", ordersController.editstatus)
@@ -43,7 +43,7 @@ router.post("/api/order/add/:id", ordersController.add)
 router.put("/api/order/edit/:id", ordersController.edit)
 router.delete("/api/order/delete/:id", ordersController.delete)
 
-//EMPLOYEES
+//EMPLOYEES +
 router.get("/api/employees", employeesController.employees)
 router.get("/api/employee/:id", employeesController.employee)
 router.post("/api/employee/add/:id", employeesController.add)

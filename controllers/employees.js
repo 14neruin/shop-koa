@@ -1,25 +1,31 @@
 let Employees = require('../models/employees')
 
 exports.employees = async ctx => {
-	ctx.body = 'Вывод всех сотрудников'
+	ctx.body = `{"result":"Вывод всех сотрудников"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.employee = async ctx => {
-	ctx.body = 'Информацио о конкретном сотруднике'
+	ctx.body = `{"result":"Вывод конкретного сотрудника"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.add = async ctx => {
-	ctx.body = 'Добавление сотрудника'
+	ctx.body = `{"result":"Добавление сотрудника"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.edit = async ctx => {
-	ctx.body = 'Редактирование сотрудника'
+	ctx.body = `{"result":"Редактирвоание сотрудника"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.status = async ctx => {
-	ctx.body = 'Изменение разрешения сотрудника'
+	ctx.body = `{"result":"Изменение разрешений для сотрудника"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.delete = async ctx => {
-	ctx.body = 'Архивирование сотрудника'
+	ctx.body = `{"result":"Архивирование сотрудника"}`
+	if(ctx.body) ctx.status = 200
 }
