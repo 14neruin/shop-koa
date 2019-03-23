@@ -10,6 +10,11 @@ exports.add = async ctx => {
 	if(!ctx.session.basket) ctx.session.basket = []
 
 	let id = ctx.params.id
+	if(Number(id) <= 0){
+		ctx.body = {status:false}
+		return ctx.status = 404
+	}
+
 	let search = 0
 	for(product of ctx.session.basket){
 		if(product.id == id){

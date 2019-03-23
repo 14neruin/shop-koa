@@ -7,28 +7,31 @@ let basketController = require('../controllers/basket')
 let ordersController = require('../controllers/orders')
 let employeesController = require('../controllers/employees')
 
-//CONFIG
-router.get('/api', async ctx => ctx.body = { ver:'1.0', lang:"ru, en"})
+//CONFIG +
+router.get('/api', async ctx => {
+	ctx.body = { ver:'1.0', lang:"ru, en"}
+	ctx.status = 200
+})
 
-//PRODUCTS
+//PRODUCTS +
 router.get("/api/products", productsController.allProducts)
 router.get("/api/products/:id", productsController.productsCategory)
 router.get("/api/product/:id", productsController.product)
-router.post("/api/product/add", productsController.add)
+router.post("/api/product/add/:id", productsController.add)
 router.put("/api/product/edit/:id", productsController.edit)
 router.delete("/api/product/delete/:id", productsController.delete)
 
-//CATEGORIES
+//CATEGORIES +
 router.get("/api/categories", categoriesController.categories)
 router.get("/api/categories/:id", categoriesController.category)
-router.post("/api/categories/add", categoriesController.category)
-router.put("/api/categories/edit/:id", categoriesController.category)
-router.delete("/api/categories/delete/:id", categoriesController.category)
+router.post("/api/categories/add/:id", categoriesController.add)
+router.put("/api/categories/edit/:id", categoriesController.edit)
+router.delete("/api/categories/delete/:id", categoriesController.delete)
 
-//BASKET
+//BASKET +
 router.get("/api/price", basketController.price)
 router.get("/api/basket", basketController.get)
-router.post("/api/basket/add", basketController.add)
+router.post("/api/basket/add/:id", basketController.add)
 router.put("/api/basket/edit/:id", basketController.edit)
 router.delete("/api/basket/delete/:id", basketController.delete)
 

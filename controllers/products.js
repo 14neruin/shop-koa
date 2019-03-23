@@ -24,13 +24,16 @@ exports.product = async ctx => {
 }
 
 exports.add = async ctx => {
-	ctx.body = ''
+	ctx.body = `{"result":"Добавление заказа"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.edit = async ctx => {
-	ctx.body = ''
+	ctx.body = `{"result":"Редактирование заказа"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.delete = async ctx => {
-	ctx.body = ''
+	ctx.body = `{"result":"Удаление заказа"}`
+	if(ctx.body) ctx.status = 200
 }

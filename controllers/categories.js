@@ -11,13 +11,16 @@ exports.category = async ctx => {
 }
 
 exports.add = async ctx => {
-	ctx.body = ''
+	ctx.body = `{"result":"Добавление категорий"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.edit = async ctx => {
-	ctx.body = ''
+	ctx.body = `{"result":"Редактирование Категорий"}`
+	if(ctx.body) ctx.status = 200
 }
 
 exports.delete = async ctx => {
-	ctx.body = ''
+	ctx.body = `{"result":"Удаление категорий"}`
+	if(ctx.body) ctx.status = 200
 }

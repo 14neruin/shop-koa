@@ -8,7 +8,7 @@ exports.price = async (ids) => {
 	if(products.error) 
 		return products
 
-	for(product of products.result){
+	for(product of products.response){
 		price+=product.price
 	}
 

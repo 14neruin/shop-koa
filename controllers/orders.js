@@ -1,24 +1,24 @@
 let Orders = require('../models/orders')
 
 exports.orders = async ctx => {
-	ctx.body = ''
+	ctx.body = 'Заказы'
 }
 
 exports.order = async ctx => {
-	ctx.body = ''
+	ctx.body = 'Заказ'
 }
 
 exports.editstatus = async ctx => {
-	ctx.body = ''
+	ctx.body = 'Редактирвоание статуса заказа'
 }
 
 exports.add = async ctx => {
-	ctx.body = ''
+	ctx.body = 'Добавление заказа'
 }
 
 exports.edit = async ctx => {
-	ctx.body = ''
+	ctx.body = 'Редактирование заказа'
 }
 exports.delete = async ctx => {
-	ctx.body = ''
+	ctx.body = 'Удаление заказа'
 }
